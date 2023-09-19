@@ -1,5 +1,5 @@
 /** @type {import('./$types').Actions} */
-import {invalid, redirect} from '@sveltejs/kit';
+import {fail, redirect} from '@sveltejs/kit';
 import {E_PASS,WEB_SITE} from '$env/static/private'
 import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
@@ -18,10 +18,10 @@ export const actions = {
         psdata = await sql `select * from pikuusers where username=${username}`
       }catch(e){
         // console.log({e})
-        return invalid(400, {postgres:true})
+        return fail(400, {postgres:true})
       }
       const compare = await bcrypt.compare(password,psdata[0].password);
-      if(!compare){return invalid(400, {cred:true})}
+      if(!compare){return fail(400, {cred:true})}
       if(compare){
         const sessionid=crypto.randomUUID();
         // console.log({cookies})
