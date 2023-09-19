@@ -1,0 +1,1 @@
+"Sorry sessions destroyed !"

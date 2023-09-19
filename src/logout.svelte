@@ -1,0 +1,1 @@
+(<form method="POST" action="?/logout"><input type="submit" class="underline cursor-pointer" value="logout" /></form> )
