@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
     import {createFFmpeg,fetchFile} from "@ffmpeg/ffmpeg";
     import html2canvas from 'html2canvas';
-    import 'maplibre-gl/dist/maplibre-gl.css';
+    // import 'maplibre-gl/dist/maplibre-gl.css';
     let availableFeatures = ["zooming","panning","rotate","create-itinerary"]
     $: active="panning"
     $: aspect="16/9"
